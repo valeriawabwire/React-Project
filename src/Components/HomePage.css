@@ -1,0 +1,24 @@
+.sign-in-button {
+    position: absolute;
+    top: 15%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .sign-in-button:hover {
+    background-color: hsl(213, 18%, 90%);
+  }
+  .h1{
+text-align: center;
+color:purple;
+font-size: 50px;
+text-shadow: 5px 5px 7px pink;
+  }
