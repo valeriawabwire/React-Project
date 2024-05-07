@@ -8,18 +8,29 @@ import ProfilePage from './Components/ProfilePage'; // Import the ProfilePage co
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [people, setPeople] = useState([])
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 3000);
+    useEffect(() => {
+      fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
+        setPeople(data)
+      })
+    })
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
+
     <Router>
       <div className="App">
+        <h2>
+          Dating APP
+        </h2>
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -36,22 +47,3 @@ function App() {
 }
 
 export default App;
-
-// function App() {
-//   const [people, setPeople] =useState([])
-
-//   useEffect(()=>{
-//     fetch('http://localhost:8000/people').then(res=>res.json()).then(data=>{
-//       setPeople(data)
-//     })
-//   })
-//   return (
-//     <div>
-//       <h2>
-//         Dating APP
-//       </h2>
-//     </div>
-//   );
-// }
-
-// export default App;
