@@ -1,3 +1,13 @@
+.home-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
 .sign-in-button {
     position: absolute;
     top: 15%;
@@ -5,20 +15,26 @@
     transform: translate(-50%, -50%);
     padding: 10px 20px;
     font-size: 16px;
-    background-color: white;
+    background-color:transparent;
     color: black;
-    border: none;
+    border:10px black;
     border-radius: 5px;
     cursor: pointer;
-    outline: none;
+    outline: 10px black;
   }
   
   .sign-in-button:hover {
     background-color: hsl(213, 18%, 90%);
   }
-  .h1{
-text-align: center;
-color:purple;
-font-size: 50px;
-text-shadow: 5px 5px 7px pink;
-  }
+  
+  
+  .h1 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 7px 7px 7px pink;
+}

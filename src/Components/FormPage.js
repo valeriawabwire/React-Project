@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import './FormPage.css'; // Import CSS file for styling
 
 function FormPage() {
+    const [promotionalEmails, setPromotionalEmails] = useState(true); // State for promotional emails checkbox
+
+    const handleCheckboxChange = () => {
+        setPromotionalEmails(!promotionalEmails); // Toggle the state when the checkbox is clicked
+    };
+
     return (
         <div>
             <div className="background-image"></div>
@@ -17,7 +23,17 @@ function FormPage() {
                         <label htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" />
                     </div>
-                    <button type="submit" className="submit-button">Submit</button>
+                    <div className="form-group">
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={promotionalEmails}
+                                onChange={handleCheckboxChange}
+                            />
+                            I don't want to receive promotional emails from LoveTube
+                        </label>
+                    </div>
+                    <Link to="/welcome" className="submit-button">Submit</Link> {/* Link to the welcome page */}
                 </form>
                 <Link to="/" className="back-button">Back to Home</Link> {/* Link to the home page */}
             </div>
@@ -26,3 +42,4 @@ function FormPage() {
 }
 
 export default FormPage;
+
