@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import people4 from '../Assets/people4.jpg'; 
+import people4 from '../Assets/people4.jpg';
 import people5 from '../Assets/people5.jpg';
 import people6 from '../Assets/people6.avif';
 import './WelcomePage.css';
@@ -22,9 +22,10 @@ function WelcomePage() {
       <p className='p1'> Just a few more steps and you're ready to go.</p>
       <div className="homepage">
         <img src={images[currentImageIndex]} alt={`People ${currentImageIndex + 1}`} />
-        <Link to="/profile">
+        <Link to="/people">
           <button className="sign-in-button">CONTINUE</button>
         </Link>
+
       </div>
     </div>
   );

@@ -36,6 +36,7 @@ function ProfilePage() {
 
     return (
         <div className="profile-container">
+            
             <h2 className="profile-title">Profile Page</h2>
             <form onSubmit={handleSubmit} className="profile-form">
                 <div className="form-group">
