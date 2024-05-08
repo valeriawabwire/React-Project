@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
 
+function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
 function PeopleItem({ name, age, gender, location, interests, preferences, image }) {
     const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
@@ -16,8 +17,8 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
     };
 
     return (
-        <div className="card" style={{width: '18rem'}}>
-            <img src="" className="card-img-top" alt="..." />
+        <div className="card" style={{ width: '18rem' }}>
+            <img src={imageSrc} className="card-img-top" alt="Profile" />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 {showDetails && (

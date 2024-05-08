@@ -1,7 +1,11 @@
+
 import React, { useState } from 'react';
-import './ProfilePage.css'; // Import CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './ProfilePage.css';
 
 function ProfilePage() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: '',
         dateOfBirth: '',
@@ -26,8 +30,8 @@ function ProfilePage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
         console.log(formData);
+        navigate('/profilepic');
     };
 
     return (
@@ -42,7 +46,6 @@ function ProfilePage() {
                 <div className="form-group">
                     <label>Date of Birth:</label>
                     <div className="dob-inputs">
-                        
                         <input type="number" name="dateOfBirth" placeholder="Day" value={formData.dateOfBirth} onChange={handleChange} />
                         <input type="number" name="monthOfBirth" placeholder="Month" value={formData.monthOfBirth} onChange={handleChange} />
                         <input type="number" name="yearOfBirth" placeholder="Year" value={formData.yearOfBirth} onChange={handleChange} />
@@ -62,29 +65,8 @@ function ProfilePage() {
                     <select name="country" value={formData.country} onChange={handleChange}>
                         <option value="">Select</option>
                         <option value="Kenya">Kenya</option>
-                        <option value="ghana">Ghana</option>
-                        <option value="tanzania">Tanzania</option>
-                        <option value="uganda">Uganda</option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="south africa">South Africa</option>
-
-                        <option value="usa">USA</option>
-                        <option value="uk">UK</option>
-                        <option value="canada">Canada</option>
-                        <option value="australia">Australia</option>
-                        <option value="india">India</option>
-                        <option value="china">China</option>
-                        <option value="russia">Russia</option>
-                        <option value="france">France</option>
-                        <option value="germany">Germany</option>
-                        <option value="italy">Italy</option>
-                        <option value="spain">Spain</option>
-                        <option value="japan">Japan</option>
-                        <option value="brazil">Brazil</option>
-                        <option value="mexico">Mexico</option>
-                        <option value="argentina">Argentina</option>
-                        <option value="brazil">Brazil</option>
-
+                        <option value="Ghana">Ghana</option>
+                        {/* Add more options */}
                     </select>
                 </div>
                 <div className="form-group">
@@ -119,3 +101,4 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
