@@ -5,31 +5,39 @@ import "./App.css";
 import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
-import ProfilePage from './Components/ProfilePage'; // Import the ProfilePage component
+import ProfilePage from './Components/ProfilePage'; 
+import PeopleItem from './Components/PeopleItem'; 
+import ProfilePic from './Components/ProfilePic'; 
+import ParentComponent from './Components/ParentComponent.js';
+// Import ProfilePic component
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
 
-  const [people, setPeople] = useState([])
-
   useEffect(() => {
-    fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
-      setPeople(data)
-    })
-    
-  })
-  return(
-    
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/people');
+        const data = await response.json();
+        setPeople(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false in case of an error
+      }
+    };
 
+    const timeout = setTimeout(() => {
+      fetchData();
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
     <Router>
-      <Notification />
       <div className="App">
-        <h3>
-          <center>Dating APP</center>
-        </h3>
-        <PeopleList people={people} />
-
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -48,8 +56,6 @@ function App() {
       </div>
     </Router>
   );
-
-  )
 }
 
-export default App;
+export default App;
