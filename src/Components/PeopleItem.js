@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './PeopleItem.css';
 
 function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
-function PeopleItem({ name, age, gender, location, interests, preferences, image }) {
     const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
