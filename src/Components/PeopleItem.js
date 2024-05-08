@@ -12,7 +12,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
 
     const sendMessage = () => {
         console.log('Sending message:', message);
-        setShowMessageForm(false); 
+        setShowMessageForm(false);
     };
 
     return (
