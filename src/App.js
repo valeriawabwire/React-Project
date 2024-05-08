@@ -15,14 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
 
-  const [people, setPeople] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
-      setPeople(data)
-    })
-  })
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,17 +38,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-
-  return (
-
-
-    <Router>
-      <div className="App">
-        <h3>
-          <center>Dating APP</center>
-        </h3>
-        <PeopleList people={people} />
-
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -75,8 +56,6 @@ function App() {
       </div>
     </Router>
   );
-
-  )
 }
 
 export default App;
