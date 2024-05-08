@@ -12,7 +12,7 @@ function HomePage() {
     };
 
     return (
-        <div className='home-container' style={backgroundImageStyle}>
+        <div className='homeContainer' style={backgroundImageStyle}>
             <h1 className='h1'>WELCOME TO LOVETUBE</h1>
             <Link to="/profile">
                 <button className="sign-in-button">Sign In</button>
