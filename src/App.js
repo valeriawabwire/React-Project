@@ -48,7 +48,6 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/profilepic" element={<ProfilePic />} /> 
             <Route path="/parentcomponent" element={<ParentComponent />} />
-            
             <Route path="/peopleitem" element={<PeopleItem />} />
             <Route path="/peoplelist" element={<PeopleList people={people} />} />
           </Routes>
