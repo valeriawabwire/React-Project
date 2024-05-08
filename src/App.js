@@ -6,6 +6,7 @@ import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
 import ProfilePage from './Components/ProfilePage'; // Import the ProfilePage component
+import Notification from './Components/Notification.js';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,11 +27,14 @@ function App() {
     fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
       setPeople(data)
     })
+    
   })
+  
   return(
     
-
+    
     <Router>
+      <Notification />
       <div className="App">
       <h3>
        <center>Dating APP</center>
