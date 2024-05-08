@@ -6,22 +6,12 @@ import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
 import ProfilePage from './Components/ProfilePage'; // Import the ProfilePage component
-import Notification from './Components/Notification.js';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [people, setPeople] = useState([]);
+
   const [people, setPeople] = useState([])
-
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    
-
-    return () => clearTimeout(timeout);
-  }, []);
-
 
   useEffect(() => {
     fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
@@ -29,17 +19,17 @@ function App() {
     })
     
   })
-  
   return(
     
-    
+
     <Router>
       <Notification />
       <div className="App">
-      <h3>
-       <center>Dating APP</center>
-      </h3>
-      <PeopleList people ={people}/>
+        <h3>
+          <center>Dating APP</center>
+        </h3>
+        <PeopleList people={people} />
+
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -47,13 +37,19 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/form" element={<FormPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/profile" element={<ProfilePage />} /> {/* Add route for ProfilePage */}
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profilepic" element={<ProfilePic />} /> 
+            <Route path="/parentcomponent" element={<ParentComponent />} />
+            
+            <Route path="/peopleitem" element={<PeopleItem />} />
+            <Route path="/peoplelist" element={<PeopleList people={people} />} />
           </Routes>
         )}
       </div>
     </Router>
-  
-      )
+  );
+
+  )
 }
 
 export default App;

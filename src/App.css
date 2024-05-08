@@ -1,5 +1,9 @@
 body {
-  background-color: rgb(253, 250, 250);
+
+  background-color: black;
+
+  
+
 }
 .load-container {
   font-size: 50px;
@@ -15,7 +19,7 @@ body {
     text-shadow: none;
   }
   to {
-    text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 70px pink, 0 0 80px pink, 0 0 90px pink;
+    text-shadow: 0 0 10px rgb(211, 119, 134), 0 0 20px rgb(216, 111, 128), 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 70px pink, 0 0 80px pink, 0 0 90px pink;
   }
 }
 
