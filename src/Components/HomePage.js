@@ -14,9 +14,10 @@ function HomePage() {
     return (
         <div className='home-container' style={backgroundImageStyle}>
             <h1 className='h1'>WELCOME TO LOVETUBE</h1>
-            <Link to="/form">
-            <button className="sign-in-button">Sign In</button>
+            <Link to="/profile">
+                <button className="sign-in-button">Sign In</button>
             </Link>
+
         </div>
     );
 }

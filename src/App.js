@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/HomePage';
 import "./App.css";
-import PeopleList from './Components/PeopleList.js';
+import PeopleItem from './Components/PeopleItem';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
-import ProfilePage from './Components/ProfilePage'; // Import the ProfilePage component
+import ProfilePage from './Components/ProfilePage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ function App() {
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 3000);
-    
+
 
     return () => clearTimeout(timeout);
   }, []);
@@ -27,15 +27,15 @@ function App() {
       setPeople(data)
     })
   })
-  return(
-    
+  return (
+
 
     <Router>
       <div className="App">
-      <h3>
-       <center>Dating APP</center>
-      </h3>
-      <PeopleList people ={people}/>
+        <h3>
+          <center>Dating APP</center>
+        </h3>
+        {/* <PeopleList people={people} /> */}
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -43,13 +43,14 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/form" element={<FormPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/profile" element={<ProfilePage />} /> {/* Add route for ProfilePage */}
+            <Route path="/profile" element={<ProfilePage />} /> 
+            <Route path="/people" element={<PeopleItem />} />
           </Routes>
         )}
       </div>
     </Router>
-  
-      )
+
+  )
 }
 
 export default App;
