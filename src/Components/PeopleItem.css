@@ -1,9 +1,36 @@
 .card {
-    margin-bottom: 20px;
-    background-color: rgba(233, 91, 198, 0.432);
+    margin-top: 0px;
+    background-color: rgba(235, 102, 202, 0.432);
     border-radius: 5px;
-    width: 24%;
+    width: 24rem;
     border: 3px solid rgba(200, 114, 226, 0.507);
     box-shadow: 3px 3px 3px rgb(172, 90, 18);
     display:inline-block;
+    max-width: 20rem;
+
+}
+.big-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 20px 0; 
+    background-color: #f8f8f8; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    width: 70%;
+    box-shadow: 5px 5px 6px palevioletred;
+}
+
+
+.like-button {
+    font-size: 35px; /* Larger emoji */
+    border: none;
+    background: none;
+    cursor: pointer;
+
+}
+
+.like-button:hover {
+    color: rgb(255, 0, 0); /* Change color on hover */
 }
