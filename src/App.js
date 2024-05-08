@@ -9,19 +9,10 @@ import ProfilePage from './Components/ProfilePage';
 import PeopleItem from './Components/PeopleItem'; 
 import ProfilePic from './Components/ProfilePic'; 
 import ParentComponent from './Components/ParentComponent.js';
-// Import ProfilePic component
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
-
-  const [people, setPeople] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:8000/people').then(res => res.json()).then(data => {
-      setPeople(data)
-    })
-  })
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,20 +27,16 @@ function App() {
       }
     };
 
+    fetchData(); // Call fetchData immediately when component mounts
+
     const timeout = setTimeout(() => {
-      fetchData();
+      fetchData(); // Call fetchData again every 5 seconds
     }, 5000);
 
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout); // Clear timeout when component unmounts
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-
-  return (
-
-
     <Router>
       <div className="App">
         <h3>
@@ -67,7 +54,6 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/profilepic" element={<ProfilePic />} /> 
             <Route path="/parentcomponent" element={<ParentComponent />} />
-            
             <Route path="/peopleitem" element={<PeopleItem />} />
             <Route path="/peoplelist" element={<PeopleList people={people} />} />
           </Routes>
@@ -75,8 +61,6 @@ function App() {
       </div>
     </Router>
   );
-
-  )
 }
 
 export default App;
