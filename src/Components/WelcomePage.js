@@ -22,10 +22,10 @@ function WelcomePage() {
       <p className='p1'> Just a few more steps and you're ready to go.</p>
       <div className="homepage">
         <img src={images[currentImageIndex]} alt={`People ${currentImageIndex + 1}`} />
-        <Link to="/people">
+        
+        <Link to="/profile">
           <button className="sign-in-button">CONTINUE</button>
         </Link>
-
       </div>
     </div>
   );

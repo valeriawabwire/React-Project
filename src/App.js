@@ -17,35 +17,26 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/people');
+        const response = await fetch('http://localhost:3000/people');
         const data = await response.json();
         setPeople(data);
-        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of an error
+      } finally {
+        // Set loading to false after a minimum delay of 5 seconds
+        setTimeout(() => {
+          setLoading(false);
+        }, 5000);
       }
     };
 
     fetchData(); // Call fetchData immediately when component mounts
-
-    const timeout = setTimeout(() => {
-      fetchData(); // Call fetchData again every 5 seconds
-    }, 5000);
-
-    return () => clearTimeout(timeout); // Clear timeout when component unmounts
-  }, []);
+  }, []); // Empty dependency array to ensure this effect runs only once
 
   return (
     <Router>
       <div className="App">
-
-        <h3>
-          <center>Dating APP</center>
-        </h3>
-        <PeopleList people={people} />
-
-
+        {/* Render load-container if loading is true */}
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -57,6 +48,7 @@ function App() {
             <Route path="/profilepic" element={<ProfilePic />} /> 
             <Route path="/parentcomponent" element={<ParentComponent />} />
             <Route path="/peopleitem" element={<PeopleItem />} />
+            {/* Pass people data to PeopleList component */}
             <Route path="/peoplelist" element={<PeopleList people={people} />} />
           </Routes>
         )}

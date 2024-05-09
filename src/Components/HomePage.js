@@ -1,25 +1,26 @@
 import React from 'react';
-import "./HomePage.css";
-import pic from "../Assets/pic.jpg";
 import { Link } from 'react-router-dom';
+import './HomePage.css'; 
+
+// Import your background image
+import backgroundImage from '../Assets/backgroundimage.avif';
 
 function HomePage() {
-    const backgroundImageStyle = {
-        backgroundImage: `url(${pic})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh', // Set height to cover the whole page
-    };
+  // Define background image style
+  const backgroundStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
 
-    return (
-        <div className='homeContainer' style={backgroundImageStyle}>
-            <h1 className='h1'>WELCOME TO LOVETUBE</h1>
-            <Link to="/profile">
-                <button className="sign-in-button">Sign In</button>
-            </Link>
-
-        </div>
-    );
+  return (
+    <div className="home-container" style={backgroundStyle}>
+      <h1 className='h1'>Welcome to LoveTube!</h1>
+      <Link to="/form">
+        <button className="sign-in-button">Sign In</button>
+      </Link>
+    </div>
+  );
 }
 
 export default HomePage;

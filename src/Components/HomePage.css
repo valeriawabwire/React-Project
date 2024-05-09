@@ -9,25 +9,24 @@
   background-position: center;
 }
 .sign-in-button {
-    position: absolute;
-    top: 15%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color:transparent;
-    color: black;
-    border:10px black;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: 10px black;
-  }
-  
-  .sign-in-button:hover {
-    background-color: hsl(213, 18%, 90%);
-  }
-  
-  
+  position: absolute;
+  top: 15%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black !important; /* Added !important */
+  color: pink !important; /* Added !important */
+  border: 10px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 10px solid black; /* Specify outline style */
+}
+
+.sign-in-button:hover {
+  background-color: hsl(213, 18%, 90%);
+}
+
   .h1 {
     position: absolute;
     top: 10%;

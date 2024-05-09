@@ -1,16 +1,16 @@
 body {
-
   background-color: black;
-
-  
-
 }
+
 .load-container {
   font-size: 50px;
   text-align: center;
   color: pink;
-  margin-top: 50vh;
-  transform: translateY(-50%);
+  position: absolute; /* Set position to absolute */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure it appears on top */
   animation: shine 1s ease-in-out infinite alternate, move 2s ease-in-out infinite;
 }
 
