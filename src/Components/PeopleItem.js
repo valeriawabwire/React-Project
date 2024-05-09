@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
 
-function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
-    const [showDetails, setShowDetails] = useState(false);
+function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc, onSelect }) {
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
+
+    const handleSelect = () => {
+        const selectedPerson = { name, age, gender, location, interests, preferences };
+        onSelect(selectedPerson);
+    };
 
     const handleMessageChange = (event) => {
         setMessage(event.target.value);
