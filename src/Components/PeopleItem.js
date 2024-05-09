@@ -21,7 +21,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
     };
 
     const handleLike = () => {
-        alert("Liked!"); // Implement actual like logic here
+        alert("Liked!"); 
     };
 
     return (
