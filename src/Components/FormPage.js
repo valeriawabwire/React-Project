@@ -47,7 +47,7 @@ function FormPage() {
                     </div>
                     <button type="submit" className="submit-button">Submit</button>
                 </form>
-                <Link to="/" className="back-button">Back to Home</Link> {/* Link to the home page */}
+                <Link to="/profile" className="back-button">Back to Home</Link> 
             </div>
         </div>
     );
