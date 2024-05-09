@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PeopleItem from './PeopleItem';
-import "./PeopleList.css"; // Import CSS for styling
+import "./PeopleList.css";
 
-// Import images for all people
+//Images for every person
 import AlvinImage from '../Assets/Alvin.jpg';
 import ArlImage from '../Assets/Arl.jpg';
 import AshaImage from '../Assets/Asha.jpg';
@@ -34,7 +34,7 @@ import LizImage from '../Assets/Liz.jpg';
 import TimImage from '../Assets/Tim.jpg';
 import KyleImage from '../Assets/Kyle.jpg';
 
-const DefaultImage = ''; // Default image if no match found
+const DefaultImage = ''; 
 
 function PeopleList({ people,onSelect }) {
     const [filteredPeople, setFilteredPeople] = useState(people);
@@ -53,7 +53,7 @@ function PeopleList({ people,onSelect }) {
 
     useEffect(() => {
         filterPeople();
-    }, [searchCriteria]); // Run filterPeople whenever searchCriteria changes
+    }, [searchCriteria]); 
     <h5>Liked people</h5>
     const filterPeople = () => {
         const filtered = people.filter(person => {
