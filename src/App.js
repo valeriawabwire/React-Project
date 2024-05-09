@@ -6,7 +6,7 @@ import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
 import ProfilePage from './Components/ProfilePage'; 
-// import Match from './Components/Match.js';
+import Match from './Components/Match.js';
 import ProfilePic from './Components/ProfilePic'; 
 import ParentComponent from './Components/ParentComponent.js';
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-    
+    <Match/>
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
