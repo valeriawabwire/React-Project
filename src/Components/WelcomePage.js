@@ -12,7 +12,7 @@ function WelcomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    }, 2000); 
 
     return () => clearInterval(interval);
   }, [images.length]);

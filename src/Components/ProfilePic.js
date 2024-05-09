@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './ProfilePic.css'; // Import CSS file for styling
+import './ProfilePic.css'; 
 
 function ProfilePic({ onImageUpload }) {
     const [image, setImage] = useState(null);
