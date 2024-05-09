@@ -6,10 +6,10 @@ function Match({ selectedPeople,onRemove}) {
     onRemove(person);}
   return (
     <div className='Match'>
-      <h2 className='heading'>Liked People</h2>
       <div className="liked"></div>
       {selectedPeople.map((person) => (
       <div key={person.id} onClick={() => handleCardClick(person)} className="liked-person">
+        <img src="" alt=''></img>
           <h3 className='name'>{person.name}</h3>
           <p className='age'>Age:{person.age}</p>
           <p className='gender'>Gender:{person.gender}</p>

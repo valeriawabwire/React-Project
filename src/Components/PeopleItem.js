@@ -24,6 +24,15 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
     
     return (
         <div className='big-Container'>
+            <div className='card-text'>
+                <p className="p-detail">
+                    Age: {age} <br />
+                    Gender: {gender} <br />
+                    Location: {location} <br />
+                    Interests: {interests} <br />
+                    Preferences: {preferences}
+                </p>
+            </div>
             <div className="card">
                 <h5 className="card-title">{name}</h5>
                 <img src={imageSrc} className="card-img-top" alt="Profile" />

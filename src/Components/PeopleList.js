@@ -54,7 +54,7 @@ function PeopleList({ people,onSelect }) {
     useEffect(() => {
         filterPeople();
     }, [searchCriteria]); // Run filterPeople whenever searchCriteria changes
-
+    <h5>Liked people</h5>
     const filterPeople = () => {
         const filtered = people.filter(person => {
             // Filter based on age
