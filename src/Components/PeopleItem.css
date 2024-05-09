@@ -6,9 +6,12 @@
     border: 3px solid rgba(200, 114, 226, 0.507);
     box-shadow: 3px 3px 3px rgb(172, 90, 18);
     display:inline-block;
-    max-width: 20rem;
-
 }
+.pass-button{
+    max-width: 20rem;
+    
+}
+
 .big-Container{
     display: flex;
     justify-content: center;
@@ -27,5 +30,17 @@
     border: none;
     background: none;
     cursor: pointer;
-
+}
+.card-text{
+    background-color: rgb(238, 106, 231);
+    margin-right: 5%;
+    border-radius: 5px;
+    max-width: 30rem; 
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 4px 4px 5px purple;
+}
+p{
+    font-style:italic;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
 }
