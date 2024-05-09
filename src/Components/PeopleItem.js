@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
 
-function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
+function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc,onSelect }) {
     const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
 
-    const handleSelect = () => {
+    const handleLike = () => {
         const selectedPerson = { name, age, gender, location, interests, preferences };
         onSelect(selectedPerson);
     };
@@ -19,10 +19,6 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
         alert("Message sent!")
         console.log('Sending message:', message);
         setShowMessageForm(false);
-    };
-    const handleLike = () => {
-        const selectedPerson = { name, age,gender,location,interests,preferences};
-        onSelect(selectedPerson);
     };
 
     

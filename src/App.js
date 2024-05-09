@@ -38,11 +38,13 @@ function App() {
   const handleLikedPerson = (person) => {
     setLikedPeople([...likedPeople, person]);
   };
-
+  const handleRemovePerson = (personToRemove) => {
+    setLikedPeople(likedPeople.filter(person => person !== personToRemove));
+  };
   return (
     <Router>
       <div className="App">
-    <Match/>
+    <Match selectedPeople={likedPeople} onRemove={handleRemovePerson}/>
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
