@@ -34,8 +34,7 @@ import LizImage from '../Assets/Liz.jpg';
 import TimImage from '../Assets/Tim.jpg';
 import KyleImage from '../Assets/Kyle.jpg';
 
-// Define DefaultImage with a default image source
-const DefaultImage = ''; // Set it to null or an empty string if you don't have a specific default image
+const DefaultImage = ''; 
 
 function PeopleList({ people }) {
     return (
@@ -141,37 +140,8 @@ function PeopleList({ people }) {
                     return <PeopleItem {...person} imageSrc={imageSrc} key={person.name} />;
                 })}
             </div>
-import React, { useState, useEffect } from 'react';
-import PeopleItem from './PeopleItem';
-
-function PeopleList() {
-    const [people, setPeople] = useState([]);
-
-    useEffect(() => {
-        // Simulate fetching data
-        const fetchedPeople = [
-            { id: 1, name: "Liz", age: 21, gender: "Female", location: "Nairobi", interests: "Reading", preferences: "Movies" },
-            // Add more people as needed
-        ];
-        setPeople(fetchedPeople);
-    }, []);
-
-    return (
-        <div>
-            {people.map(person => (
-                <PeopleItem
-                    key={person.id}
-                    name={person.name}
-                    age={person.age}
-                    gender={person.gender}
-                    location={person.location}
-                    interests={person.interests}
-                    preferences={person.preferences}
-                />
-            ))}
         </div>
     );
 }
 
-export default PeopleList;
 export default PeopleList;

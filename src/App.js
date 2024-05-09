@@ -39,10 +39,12 @@ function App() {
   return (
     <Router>
       <div className="App">
+
         <h3>
           <center>Dating APP</center>
         </h3>
         <PeopleList people={people} />
+
 
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
