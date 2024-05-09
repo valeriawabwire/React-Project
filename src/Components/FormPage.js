@@ -1,23 +1,22 @@
 
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
-import './FormPage.css'; // Import CSS file for styling
+import { Link, useNavigate } from 'react-router-dom'; 
+import './FormPage.css'; 
 
 function FormPage() {
-    const [promotionalEmails, setPromotionalEmails] = useState(true); // State for promotional emails checkbox
-    const navigate = useNavigate(); // Initialize useNavigate
+    const [promotionalEmails, setPromotionalEmails] = useState(true); 
+    const navigate = useNavigate(); 
 
     const handleCheckboxChange = () => {
-        setPromotionalEmails(!promotionalEmails); // Toggle the state when the checkbox is clicked
+        setPromotionalEmails(!promotionalEmails); 
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const isConfirmed = window.confirm("Would you like to save your information on the app?");
         if (isConfirmed) {
-            // Logic to save the information
             console.log("Information saved!");
-            navigate('/welcome'); // Navigate to the welcome page
+            navigate('/welcome'); 
         }
     };
 
