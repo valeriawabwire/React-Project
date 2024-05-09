@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
 
+function PeopleItem({ name, age, gender, location, interests, preferences, onSelect }) {
 function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
     const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
+
+    const handleSelect = () => {
+        const selectedPerson = { name, age,gender,location,interests,preferences};
+        onSelect(selectedPerson);
+    };
 
     const handleMessageChange = (event) => {
         setMessage(event.target.value);
@@ -13,6 +19,16 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
     const sendMessage = () => {
         alert("Message sent!")
         console.log('Sending message:', message);
+        
+        setShowMessageForm(false); 
+    };
+
+    return (
+        <div className="card" style={{width: '18rem'}}>
+            <button onClick={handleSelect} className="like-button">Like</button>
+            <button className="pass-button">Pass</button>
+            <img src="" className="card-img-top" alt="..." />
+            <div className="card-body">
         setShowMessageForm(false);
     };
 

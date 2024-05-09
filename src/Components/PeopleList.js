@@ -1,3 +1,19 @@
+import React from "react";
+import PeopleItem from './PeopleItem';
+
+function PeopleList({ people,onSelect}) {
+    
+    return (
+        <div>
+            {people.map(person => {
+                return <PeopleItem {...person}
+                onSelect={() => onSelect(person)}/>
+            })}
+        </div>
+    )
+}
+export default PeopleList
+
 import React, { useState, useEffect } from "react";
 import PeopleItem from './PeopleItem';
 import "./PeopleList.css"; // Import CSS for styling
