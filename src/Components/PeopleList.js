@@ -1,11 +1,13 @@
 import React from "react";
 import PeopleItem from './PeopleItem';
 
-function PeopleList({ people }) {
+function PeopleList({ people,onSelect}) {
+    
     return (
         <div>
             {people.map(person => {
-                return <PeopleItem {...person}/>
+                return <PeopleItem {...person}
+                onSelect={() => onSelect(person)}/>
             })}
         </div>
     )
