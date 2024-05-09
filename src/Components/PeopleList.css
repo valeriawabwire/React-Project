@@ -1,0 +1,22 @@
+.scroll-container {
+    overflow-x:scroll;
+    white-space: nowrap;
+    padding: 20px 0;
+    margin-right: 20px;
+}
+.card-body{
+    padding: 15px;
+}
+.card-container {
+    width: 100%; 
+    display: inline-block;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card-container .person-card {
+    display: inline-block;
+    width: 300px; /* Adjust width as necessary */
+    margin-right: 20px;
+}
+

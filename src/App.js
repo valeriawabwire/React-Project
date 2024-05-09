@@ -21,6 +21,31 @@ function App() {
       setLoading(false);
     }, 3000);
     
+import PeopleItem from './Components/PeopleItem'; 
+import ProfilePic from './Components/ProfilePic'; 
+import ParentComponent from './Components/ParentComponent.js';
+// Import ProfilePic component
+
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [people, setPeople] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/people');
+        const data = await response.json();
+        setPeople(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false in case of an error
+      }
+    };
+
+    const timeout = setTimeout(() => {
+      fetchData();
+    }, 5000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -45,6 +70,9 @@ function App() {
         </h3>
         <Match selectedPeople={likedPeople} />
         <PeopleList people={people} onSelect={handleLikedPerson} /> 
+  return (
+    <Router>
+      <div className="App">
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -53,6 +81,11 @@ function App() {
             <Route path="/form" element={<FormPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/profile" element={<ProfilePage />} /> 
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profilepic" element={<ProfilePic />} /> 
+            <Route path="/parentcomponent" element={<ParentComponent />} />
+            <Route path="/peopleitem" element={<PeopleItem />} />
+            <Route path="/peoplelist" element={<PeopleList people={people} />} />
           </Routes>
         )}
       </div>
@@ -61,3 +94,4 @@ function App() {
 }
 
 export default App;
+export default App;
