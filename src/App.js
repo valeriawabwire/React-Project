@@ -6,7 +6,7 @@ import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
 import ProfilePage from './Components/ProfilePage'; 
-// import Match from './Components/Match.js';
+import Match from './Components/Match.js';
 import ProfilePic from './Components/ProfilePic'; 
 import ParentComponent from './Components/ParentComponent.js';
 
@@ -38,11 +38,13 @@ function App() {
   const handleLikedPerson = (person) => {
     setLikedPeople([...likedPeople, person]);
   };
-
+  const handleRemovePerson = (personToRemove) => {
+    setLikedPeople(likedPeople.filter(person => person !== personToRemove));
+  };
   return (
     <Router>
       <div className="App">
-      {/* <Match/> */}
+    <Match selectedPeople={likedPeople} onRemove={handleRemovePerson}/>
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
+import Notification from './Notification';
 
-function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc, onSelect }) {
+function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc,onSelect }) {
+    const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
 
-    const handleSelect = () => {
+    const handleLike = () => {
         const selectedPerson = { name, age, gender, location, interests, preferences };
         onSelect(selectedPerson);
     };
@@ -20,10 +22,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
         setShowMessageForm(false);
     };
 
-    const handleLike = () => {
-        alert("Liked!"); 
-    };
-
+    
     return (
         <div className='big-Container'>
             <div className='card-text'>
@@ -35,7 +34,6 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
                     Preferences: {preferences}
                 </p>
             </div>
-
             <div className="card">
                 <h5 className="card-title">{name}</h5>
                 <img src={imageSrc} className="card-img-top" alt="Profile" />
@@ -51,7 +49,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
                 </div>
             </div>
             <button onClick={handleLike} className="like-button">❤️</button>
-
+            <Notification />
         </div>
     );
 }

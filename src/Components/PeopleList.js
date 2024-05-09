@@ -36,7 +36,7 @@ import KyleImage from '../Assets/Kyle.jpg';
 
 const DefaultImage = ''; // Default image if no match found
 
-function PeopleList({ people }) {
+function PeopleList({ people,onSelect }) {
     const [filteredPeople, setFilteredPeople] = useState(people);
     const [searchCriteria, setSearchCriteria] = useState({
         age: '',
@@ -54,7 +54,7 @@ function PeopleList({ people }) {
     useEffect(() => {
         filterPeople();
     }, [searchCriteria]); // Run filterPeople whenever searchCriteria changes
-
+    <h5>Liked people</h5>
     const filterPeople = () => {
         const filtered = people.filter(person => {
             // Filter based on age
@@ -186,7 +186,7 @@ function PeopleList({ people }) {
                     }
                     return (
                         <div className="card-container">
-                            <PeopleItem {...person} imageSrc={imageSrc} key={person.name} />
+                            <PeopleItem {...person} imageSrc={imageSrc} key={person.name}  onSelect={onSelect} />
                         </div>
                     );
                 })}
