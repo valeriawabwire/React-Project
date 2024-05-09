@@ -1,0 +1,28 @@
+
+.Match {
+    padding: 20px; 
+    
+  }
+  
+  .liked-person h3 {
+    margin-top: 0;
+    text-align: center; 
+  }
+  
+  .liked-person {
+    color:white;
+  padding: 10px 24px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 200px;
+  margin-bottom: 16px;
+  background-color: hotpink;
+  display: inline-block;
+   gap:15px;
+  margin: 5px;
+ 
+
+  }
+  
+  

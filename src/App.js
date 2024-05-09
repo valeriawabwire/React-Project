@@ -9,12 +9,22 @@ import ProfilePage from './Components/ProfilePage';
 import PeopleItem from './Components/PeopleItem'; 
 import ProfilePic from './Components/ProfilePic'; 
 import ParentComponent from './Components/ParentComponent.js';
+import Match from './Components/Match';
 // Import ProfilePic component
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
+  const [likedPeople, setLikedPeople] = useState([])
+  
+  const handleLikedPerson = (person) => {
+    setLikedPeople([...likedPeople, person]);
+  };
+  const handleRemove = (id) => {
+    setLikedPeople(likedPeople.filter(person => person.id !== id));
+  };
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,6 +48,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+      <Match selectedPeople={likedPeople} onRemove={handleRemove}/>
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -49,12 +60,14 @@ function App() {
             <Route path="/profilepic" element={<ProfilePic />} /> 
             <Route path="/parentcomponent" element={<ParentComponent />} />
             <Route path="/peopleitem" element={<PeopleItem />} />
-            <Route path="/peoplelist" element={<PeopleList people={people} />} />
+            {/* <Route path="/Match" element={<Match selectedPeople={likedPeople} />} /> */}
+            <Route path="/peoplelist" element={<PeopleList people={people} onSelect={handleLikedPerson} />} />    
           </Routes>
         )}
       </div>
     </Router>
   );
 }
+
 
 export default App;

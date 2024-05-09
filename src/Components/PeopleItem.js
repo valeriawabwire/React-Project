@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
 
-function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
+function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc ,onSelect}) {
     const [showDetails, setShowDetails] = useState(false);
     const [showMessageForm, setShowMessageForm] = useState(false);
     const [message, setMessage] = useState('');
@@ -15,13 +15,15 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
         console.log('Sending message:', message);
         setShowMessageForm(false);
     };
-
     const handleLike = () => {
-        alert("Liked!"); // Implement actual like logic here
+        const selectedPerson = { name, age,gender,location,interests,preferences};
+        onSelect(selectedPerson);
     };
 
+    
     return (
         <div className='big-Container'>
+          
             <div className="card">
                 <img src={imageSrc} className="card-img-top" alt="Profile" />
                 <div className="card-body">
@@ -49,6 +51,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
                 </div>
             </div>
             <button onClick={handleLike} className="like-button">❤️</button>
+
 
         </div>
     );
